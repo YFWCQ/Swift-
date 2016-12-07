@@ -9,13 +9,13 @@
 import UIKit
 
 class YFForVC: YFBaseViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         // Swift 3.0 去掉了 C 语言风格的 For 循环
-        goThroughAllItemInArray()
+        goThroughAllOfConditionItemInArray()
         
     }
     
@@ -31,8 +31,13 @@ class YFForVC: YFBaseViewController {
     func goThroughAllItemInArray() -> Void {
         
         let array = ["1","2","3","4","5"]
-//        let array33 = [1,2,3,5]
+        //        let array33 = [1,2,3,5]
         var ss = ""
+        
+        for i in 0..<array.count{
+            print(array[i])
+        }
+        
         for aa in array {
             ss += aa
         }
@@ -41,8 +46,8 @@ class YFForVC: YFBaseViewController {
         var sb = ""
         // 如果想知道 索引 怎么办呢
         for bb in array.enumerated() {
-
-//       \ 后面加 () 小括号里 可以写代码（变量表达式）
+            
+            //       \ 后面加 () 小括号里 可以写代码（变量表达式）
             sb += "[\(bb.offset)]\(bb.element)"
             
         }
@@ -55,5 +60,46 @@ class YFForVC: YFBaseViewController {
         }
         print("ssb: " + ssb)
     }
+    
+    // 逆序 遍历
+    func goThroughAllOfReverseItemInArray() -> Void {
+        
+        let array = ["1","2","3","4","5"]
+        //        let array33 = [1,2,3,5]
+        
+        var sb = ""
+        
+        for bb in array.enumerated().reversed() {
+            
+            //       \ 后面加 () 小括号里 可以写代码（变量表达式）
+            sb += "[\(bb.offset)]\(bb.element)"
+            
+        }
+        print("sb: " + sb)
+    }
+    
+    // 条件 取数组元素
+    func goThroughAllOfConditionItemInArray() -> Void {
+        
+        let array = ["1","2","3","4","5"]
+        //        let array33 = [1,2,3,5]
+        
+        var sb = ""
+        
+        for bb in array.enumerated().filter({ (index, item)  in index % 2 == 0
+            
+        }) {
+            
+            //       \ 后面加 () 小括号里 可以写代码（变量表达式）
+            sb += "[\(bb.offset)]\(bb.element)"
+            
+        }
+        
+        
+        print("sb: " + sb)
+    }
+    
+    
+    
     
 }

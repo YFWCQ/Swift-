@@ -16,6 +16,7 @@
 		5EAEAB8D1DD1D575002ACA90 /* YFTestCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAEAB8C1DD1D575002ACA90 /* YFTestCellModel.swift */; };
 		5EAEAB901DD1DC6C002ACA90 /* YFTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAEAB8E1DD1DC6C002ACA90 /* YFTestCell.swift */; };
 		5EAEAB911DD1DC6C002ACA90 /* YFTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAEAB8F1DD1DC6C002ACA90 /* YFTestCell.xib */; };
+		5EDE74A81DF81588004C816A /* YFGenericsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDE74A71DF81588004C816A /* YFGenericsVC.swift */; };
 		5EE2995D1DB4C2490027C341 /* YFStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2995C1DB4C2490027C341 /* YFStructViewController.swift */; };
 		5EF051371DD05066005FDD23 /* NSObject+RungtimeFY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF050F61DD05066005FDD23 /* NSObject+RungtimeFY.m */; };
 		5EF051381DD05066005FDD23 /* NSObject+setDicFY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF050F81DD05066005FDD23 /* NSObject+setDicFY.m */; };
@@ -146,6 +147,7 @@
 		5EAEAB8C1DD1D575002ACA90 /* YFTestCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFTestCellModel.swift; sourceTree = "<group>"; };
 		5EAEAB8E1DD1DC6C002ACA90 /* YFTestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFTestCell.swift; sourceTree = "<group>"; };
 		5EAEAB8F1DD1DC6C002ACA90 /* YFTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YFTestCell.xib; sourceTree = "<group>"; };
+		5EDE74A71DF81588004C816A /* YFGenericsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFGenericsVC.swift; sourceTree = "<group>"; };
 		5EE2995C1DB4C2490027C341 /* YFStructViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFStructViewController.swift; sourceTree = "<group>"; };
 		5EF050F51DD05066005FDD23 /* NSObject+RungtimeFY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RungtimeFY.h"; sourceTree = "<group>"; };
 		5EF050F61DD05066005FDD23 /* NSObject+RungtimeFY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RungtimeFY.m"; sourceTree = "<group>"; };
@@ -374,6 +376,15 @@
 				5E4A97D61C2BBB6C00D27BE7 /* FYArrayTestModel.swift */,
 			);
 			path = Array;
+			sourceTree = "<group>";
+		};
+		5ED6AAF91DF8144300F1E032 /* Generics泛型 */ = {
+			isa = PBXGroup;
+			children = (
+				5EDE74A71DF81588004C816A /* YFGenericsVC.swift */,
+			);
+			name = "Generics泛型";
+			path = Generics;
 			sourceTree = "<group>";
 		};
 		5EE299581DB4A9BB0027C341 /* Struct */ = {
@@ -838,6 +849,7 @@
 		79EC6EDA1AE8CEC9009548C5 /* SwiftWorks */ = {
 			isa = PBXGroup;
 			children = (
+				5ED6AAF91DF8144300F1E032 /* Generics泛型 */,
 				5E299D2D1DEFD2490094B95A /* For循环 */,
 				5EF050F21DD05066005FDD23 /* Vendor */,
 				5EE299581DB4A9BB0027C341 /* Struct */,
@@ -1069,6 +1081,7 @@
 				5EF051591DD0506C005FDD23 /* MBProgressHUD.m in Sources */,
 				5EAEAB8B1DD1D148002ACA90 /* YFBaseViewController.swift in Sources */,
 				5EF051C41DD055A0005FDD23 /* NSString+YFCategory.m in Sources */,
+				5EDE74A81DF81588004C816A /* YFGenericsVC.swift in Sources */,
 				5EF0513C1DD05066005FDD23 /* UIActionSheet+FYAdditions.m in Sources */,
 				5EF052071DD06307005FDD23 /* YFBaseCellModel.swift in Sources */,
 				5EF0514E1DD05066005FDD23 /* FYRefreshHeadView.m in Sources */,
