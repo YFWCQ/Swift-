@@ -56,8 +56,8 @@ static const void *kHttpServiceArrayKeyFY = @"kHttpServiceArrayKeyFY";
 {
     for (YFHttpService *service in self.httpServiceArrayYF)
     {
-        // 取消网络请求，会调用 error，记得处理
-//        [service yf_cancel];
+//         取消网络请求，会调用 error，记得处理
+        [service yf_cancel];
     }
 }
 

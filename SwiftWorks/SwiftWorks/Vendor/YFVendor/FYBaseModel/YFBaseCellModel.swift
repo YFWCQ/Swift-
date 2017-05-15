@@ -15,7 +15,7 @@ class YFBaseCellModel: YFBaseModel {
     
     var cellClass:AnyClass!
     var cellHeight:CGFloat = 0.0
-    var cellIdentifier:String!
+    var cellIdentifier:String?
     var didSelectCellBlock:(()->())!
     
     required init(dic: [String : AnyObject]) {
@@ -33,13 +33,26 @@ class YFBaseCellModel: YFBaseModel {
     
     func cellWithModel(model:YFBaseCellModel,tableView:UITableView,indexPath:NSIndexPath,currentVC:YFBaseViewController)->YFBaseCell
     {
-        var cell = tableView.dequeueReusableCell(withIdentifier: model.cellIdentifier) as? YFBaseCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: model.cellIdentifier!) as? YFBaseCell
         if cell == nil
         {
-            if let cellArray = (Bundle.main.loadNibNamed(model.cellIdentifier, owner: nil, options: nil) as AnyObject) as? [YFBaseCell]{
-                cell = cellArray[0]
+            if self.cellClass != nil {
+                 let _: YFBaseCell.Type = cellClass as! YFBaseCell.Type
+                
+//                 let classCell = cellClassType(style: .plain, reuseIdentifier: self.cellIdentifier)
+//                
+//                if classSubCell = classCell as? YFBaseCell {
+//                    cell  = classSubCell
+//                }
+//                    cell = cellClassType(style: .plain, reuseIdentifier: model.cellIdentifier)
+                
+            }else{
+                if let cellArray = (Bundle.main.loadNibNamed(model.cellIdentifier!, owner: nil, options: nil) as AnyObject) as? [YFBaseCell]{
+                    cell = cellArray[0]
+                }
+
             }
-        }
+    }
         model.currentVC = currentVC
         model.bindModel(baseCell: cell!, indexPath: indexPath)
         return cell!

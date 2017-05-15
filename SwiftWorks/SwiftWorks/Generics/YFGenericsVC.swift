@@ -10,10 +10,15 @@ import UIKit
 
 class YFGenericsVC: YFBaseViewController {
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         
         var a = "4"
         var b = "5"
@@ -27,6 +32,15 @@ class YFGenericsVC: YFBaseViewController {
         
         
         var array:[String] = ["22","dd","dddd"]
+        
+        let tableView:UITableView = UITableView();
+
+        
+        
+        
+        if tableView.responds(to: #selector(UICollectionView.reloadData)) != false{
+            
+        }
         
         self.editArray(aaa: &array)
         
@@ -52,7 +66,8 @@ class YFGenericsVC: YFBaseViewController {
      func  editArray(aaa:inout Array<String>)
     {
         aaa.removeAll()
-    }
+        
     
+    }
     
 }

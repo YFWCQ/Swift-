@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
          window = UIWindow(frame: UIScreen.main.bounds)
         
-        let controller = YFGenericsVC();
+        let controller = CCUITableViewRCVC();
         
         self.window!.rootViewController = controller;
         

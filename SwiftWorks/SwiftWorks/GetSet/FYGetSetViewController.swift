@@ -16,11 +16,11 @@ class FYGetSetViewController: UIViewController {
     {
         super.viewDidLoad()
         
-        print(modle.title)
+        print(modle.title ?? "")
 
         modle.title = "12"
         
-        print(modle.title)
+        print(modle.title ?? "")
         
         // Do any additional setup after loading the view.
     }

@@ -22,7 +22,7 @@ class FYLoveModel: NSObject {
         set(s){
             
             titleNew = s
-            print(titleNew)
+            print(titleNew ?? "")
             
         }
     }

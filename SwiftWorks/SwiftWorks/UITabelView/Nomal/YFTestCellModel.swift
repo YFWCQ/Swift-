@@ -16,7 +16,7 @@ class YFTestCellModel: YFBaseCellModel {
         super.init(dic: dic)
         self.cellIdentifier = "YFTestCell"
         self.cellHeight = 45.0
-        self.cellClass = YFTestCell.classForCoder()
+//        self.cellClass = YFTestCell.classForCoder()
     }
     
     override func bindModel(baseCell: YFBaseCell, indexPath: NSIndexPath) {

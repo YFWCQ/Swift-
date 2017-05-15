@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class YFBaseCell: UITableViewCell {
 
     override func awakeFromNib() {
@@ -30,3 +31,5 @@ class YFBaseCell: UITableViewCell {
     }
 
 }
+
+
