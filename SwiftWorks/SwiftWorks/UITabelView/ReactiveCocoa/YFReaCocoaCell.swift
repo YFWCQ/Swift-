@@ -9,7 +9,7 @@
 import UIKit
 
 
-class YFReaCocoaCell: UITableViewCell {
+class YFReaCocoaCell: YFBaseCell {
 
     @IBOutlet weak var button: UIButton!
     override func awakeFromNib() {

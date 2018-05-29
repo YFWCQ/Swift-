@@ -40,13 +40,16 @@ class YFBaseCellModel: YFBaseModel {
                  let _: YFBaseCell.Type = cellClass as! YFBaseCell.Type
                 
 //                 let classCell = cellClassType(style: .plain, reuseIdentifier: self.cellIdentifier)
-//                
+//
 //                if classSubCell = classCell as? YFBaseCell {
 //                    cell  = classSubCell
 //                }
 //                    cell = cellClassType(style: .plain, reuseIdentifier: model.cellIdentifier)
                 
             }else{
+                
+                let arrayddd = Bundle.main.loadNibNamed(model.cellIdentifier!, owner: nil, options: nil);
+                
                 if let cellArray = (Bundle.main.loadNibNamed(model.cellIdentifier!, owner: nil, options: nil) as AnyObject) as? [YFBaseCell]{
                     cell = cellArray[0]
                 }

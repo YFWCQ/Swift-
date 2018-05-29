@@ -31,38 +31,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1"
             endingLineNumber = "1">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[FYBaseViewController naviOffsetYY]"
-                  moduleName = "SwiftWorks"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fywcq/Documents/GitResposit/Swift%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/SwiftWorks/SwiftWorks/Vendor/YFVendor/FYRefresh/BaseViewController/FYBaseViewController.m"
-                  timestampString = "516535058.971727"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[FYBaseViewController setNaviOffsetYY:]"
-                  moduleName = "SwiftWorks"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fywcq/Documents/GitResposit/Swift%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/SwiftWorks/SwiftWorks/Vendor/YFVendor/FYRefresh/BaseViewController/FYBaseViewController.m"
-                  timestampString = "516535058.974017"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "38">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
