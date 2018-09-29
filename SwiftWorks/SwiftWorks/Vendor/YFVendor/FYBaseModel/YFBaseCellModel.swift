@@ -47,9 +47,7 @@ class YFBaseCellModel: YFBaseModel {
 //                    cell = cellClassType(style: .plain, reuseIdentifier: model.cellIdentifier)
                 
             }else{
-                
-                let arrayddd = Bundle.main.loadNibNamed(model.cellIdentifier!, owner: nil, options: nil);
-                
+                                
                 if let cellArray = (Bundle.main.loadNibNamed(model.cellIdentifier!, owner: nil, options: nil) as AnyObject) as? [YFBaseCell]{
                     cell = cellArray[0]
                 }
