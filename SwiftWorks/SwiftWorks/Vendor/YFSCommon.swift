@@ -113,21 +113,8 @@ class FYCommon: NSObject {
 }
 
 
-func  IPhone4_5_6_6P(a:CGFloat,b:CGFloat,c:CGFloat,d:CGFloat) -> CGFloat{
-    return (CGSize(width:320,height: 480).equalTo(UIScreen.main.bounds.size) ? (a) : (CGSize(width:320,height: 568).equalTo(UIScreen.main.bounds.size) ? (b) : (CGSize(width:375,height: 667).equalTo(UIScreen.main.bounds.size) ? (c) : (CGSize(width:414, height:736).equalTo(UIScreen.main.bounds.size) ? (d) : (a)))))
-}
 
-func XFrom6_FY(x:CGFloat) -> CGFloat{
-    return (screenWidth) / 375.0 * x
-}
-func fontSize_FY(size:CGFloat) -> UIFont{
-    return UIFont.systemFont(ofSize: size)
-}
 
-let iPhone_4_FY: Bool! =  CGSize(width:320,height: 480).equalTo(UIScreen.main.bounds.size) // iPhone4及4s
-let iPhone_5_FY: Bool! =   CGSize(width:320,height: 566).equalTo(UIScreen.main.bounds.size)   // iPhone5及5s
-let iPhone_6_FY: Bool! = CGSize(width:375, height:667).equalTo(UIScreen.main.bounds.size)// iPhone6//iPhone6+
-let iPhone_6_plus_FY: Bool! = CGSize(width:750,height: 736).equalTo(UIScreen.main.bounds.size)//iPhone6+
 
 
 //let titleColor_FY = UIColor(red: 80.0/255, green: 80.0/255, blue: 80.0/255, alpha:1)

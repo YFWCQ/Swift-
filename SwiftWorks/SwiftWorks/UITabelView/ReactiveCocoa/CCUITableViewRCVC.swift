@@ -16,7 +16,6 @@ class CCUITableViewRCVC: YFBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         
         let tableView:UITableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.plain)
@@ -51,6 +50,7 @@ class CCUITableViewRCVC: YFBaseViewController {
         self.dataModelYF.dataArray.append(sectionModel)
         
         print(self.dataModelYF.dataArray.count)
+        
         
 
         

@@ -86,12 +86,12 @@ class FYArrayViewController: YFBaseViewController {
         // Do any additional setup after loading the view.
     }
     
-    func aaaa(_ dd:UITapGestureRecognizer){
+    @objc func aaaa(_ dd:UITapGestureRecognizer){
         print("aaaa")
         print("个数 : \(abc.count)")
 
     }
-    func bbbb(_ dd:UITapGestureRecognizer){
+    @objc  func bbbb(_ dd:UITapGestureRecognizer){
         print("bbbb")
         print("个数 : \(abc.count)")
 

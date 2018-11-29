@@ -25,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window!.makeKeyAndVisible();
         
+       
+        var i:Int  = 1;
+        var j:Int = 0;
+        
         return true
     }
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2ADE60CA24FADBE5847BFDE7 /* Pods_SwiftWorks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A623A2DFD3C8F8044423298C /* Pods_SwiftWorks.framework */; };
+		5E0E2F37215F859A00C27E00 /* YFBaseListTitleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E2F36215F859A00C27E00 /* YFBaseListTitleVC.swift */; };
+		5E1DE45221785B200084A175 /* ToDo.v2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1DE45121785B200084A175 /* ToDo.v2.swift */; };
 		5E20C1041EC9BBD7007FA59A /* CCUITableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20C0FE1EC9BBD7007FA59A /* CCUITableViewViewController.swift */; };
 		5E20C1051EC9BBD7007FA59A /* YFTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20C0FF1EC9BBD7007FA59A /* YFTestCell.swift */; };
 		5E20C1061EC9BBD7007FA59A /* YFTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E20C1001EC9BBD7007FA59A /* YFTestCell.xib */; };
@@ -138,6 +140,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E0E2F36215F859A00C27E00 /* YFBaseListTitleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFBaseListTitleVC.swift; sourceTree = "<group>"; };
+		5E1DE45121785B200084A175 /* ToDo.v2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDo.v2.swift; sourceTree = "<group>"; };
 		5E20C0FE1EC9BBD7007FA59A /* CCUITableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCUITableViewViewController.swift; sourceTree = "<group>"; };
 		5E20C0FF1EC9BBD7007FA59A /* YFTestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFTestCell.swift; sourceTree = "<group>"; };
 		5E20C1001EC9BBD7007FA59A /* YFTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YFTestCell.xib; sourceTree = "<group>"; };
@@ -371,6 +375,22 @@
 				E595D5C8E9B0415B9B00D8B0 /* Pods-SwiftWorks.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5E1DE44F21785B110084A175 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				5E1DE45021785B190084A175 /* Right */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		5E1DE45021785B190084A175 /* Right */ = {
+			isa = PBXGroup;
+			children = (
+				5E1DE45121785B200084A175 /* ToDo.v2.swift */,
+			);
+			path = Right;
 			sourceTree = "<group>";
 		};
 		5E20C0FD1EC9BBD7007FA59A /* Nomal */ = {
@@ -888,6 +908,7 @@
 		79EC6EDA1AE8CEC9009548C5 /* SwiftWorks */ = {
 			isa = PBXGroup;
 			children = (
+				5E1DE44F21785B110084A175 /* MVC */,
 				5ED6AAF91DF8144300F1E032 /* Generics泛型 */,
 				5E299D2D1DEFD2490094B95A /* For循环 */,
 				5EF050F21DD05066005FDD23 /* Vendor */,
@@ -906,6 +927,7 @@
 				79EC6EE61AE8CEC9009548C5 /* LaunchScreen.xib */,
 				79EC6EDB1AE8CEC9009548C5 /* Supporting Files */,
 				5EAEAB8A1DD1D148002ACA90 /* YFBaseViewController.swift */,
+				5E0E2F36215F859A00C27E00 /* YFBaseListTitleVC.swift */,
 			);
 			path = SwiftWorks;
 			sourceTree = "<group>";
@@ -1150,6 +1172,7 @@
 				5EF051431DD05066005FDD23 /* FYBaseRefreshTableView.m in Sources */,
 				5EF051921DD0535C005FDD23 /* FYTBSectionsModel.m in Sources */,
 				5EF0514B1DD05066005FDD23 /* FYRefreshCollectionView.m in Sources */,
+				5E1DE45221785B200084A175 /* ToDo.v2.swift in Sources */,
 				5EF051BE1DD055A0005FDD23 /* NSObject+RungtimeFY.m in Sources */,
 				5EF0513D1DD05066005FDD23 /* UIAlertView+FYAdditions.m in Sources */,
 				5EF0521D1DD08627005FDD23 /* YFTBSectionDelegate.swift in Sources */,
@@ -1170,6 +1193,7 @@
 				795E8CD11B9E847D00DDF772 /* OCModel.m in Sources */,
 				5EF0513E1DD05066005FDD23 /* UIView+FYLoadingView.m in Sources */,
 				79EC6EE01AE8CEC9009548C5 /* ViewController.swift in Sources */,
+				5E0E2F37215F859A00C27E00 /* YFBaseListTitleVC.swift in Sources */,
 				5EF0514C1DD05066005FDD23 /* FYRefreahBaseHFView.m in Sources */,
 				5EAEAB871DD1C266002ACA90 /* YFTBExtension.swift in Sources */,
 				5EF0519A1DD0535C005FDD23 /* GTFYAlertView.m in Sources */,
@@ -1380,6 +1404,7 @@
 				INFOPLIST_FILE = SwiftWorks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "Medalands.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftWorks/OC/SwiftWorks-Bridging-Header.h";

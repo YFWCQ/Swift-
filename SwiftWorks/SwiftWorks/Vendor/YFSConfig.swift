@@ -55,43 +55,87 @@ protocol GYToVCDelegate: NSObjectProtocol {
     func toVC(vc: UIViewController)
 }
 
-let iPhone_4_4s: Bool! = UIScreen.instancesRespond(to: #selector(getter: UIScreen.currentMode)) ? CGSize(width:640, height: 960).equalTo(UIScreen.main.currentMode!.size) : false // iPhone4及4s
-let iPhone_5_5s: Bool! = UIScreen.instancesRespond(to: #selector(getter: UIScreen.currentMode)) ? CGSize(width:640,height: 1136).equalTo(UIScreen.main.currentMode!.size) : false // iPhone5及5s
-let iPhone_6: Bool! = UIScreen.instancesRespond(to: #selector(getter: UIScreen.currentMode)) ? CGSize(width:750,height: 1334).equalTo(UIScreen.main.currentMode!.size) : false // iPhone6
-let iPhone_6_plus: Bool! = UIScreen.instancesRespond(to: #selector(getter: UIScreen.currentMode)) ? CGSize(width:1242,height: 2208).equalTo(UIScreen.main.currentMode!.size) : false //iPhone6+
+let iPhone_4_4s: Bool! = CGSize(width:320,height: 480).equalTo(UIScreen.main.bounds.size)
+
+let iPhone_5_5s: Bool! = CGSize(width:320,height: 568).equalTo(UIScreen.main.bounds.size)
+
+let iPhone_6_6s: Bool! = CGSize(width:375,height: 667).equalTo(UIScreen.main.bounds.size)
+
+let iPhone_678p: Bool! = CGSize(width:414,height: 736).equalTo(UIScreen.main.bounds.size)
+
+let iPhoneX_XS: Bool! = CGSize(width:375,height: 812).equalTo(UIScreen.main.bounds.size)
+
+let iPhoneXR_XSM: Bool! = CGSize(width:414,height: 896).equalTo(UIScreen.main.bounds.size)
+
+let iPhoneXStyle: Bool! = (iPhoneX_XS || iPhoneXR_XSM)
+
+let iPhoneExtraStatusHeight = iPhoneXStyle ? 24 : 0
+let iPhoneExtraHeight = iPhoneXStyle ? 34 : 0
+
 var ipad: Bool = UIDevice.current.userInterfaceIdiom == .pad
 
-func decodeStringForKey(aDecoder: NSCoder, key: String) -> String {
+func  iPhone4_5_6_6P_XXS_XSMR(a:CGFloat,
+                              b:CGFloat,
+                              c:CGFloat,
+                              d:CGFloat,
+                              e:CGFloat,
+                              f:CGFloat) -> CGFloat{
+    return (iPhone_4_4s  ? (a) :
+           (iPhone_5_5s  ? (b) :
+           (iPhone_6_6s  ? (c) :
+           (iPhone_678p  ? (d) :
+           (iPhoneX_XS   ? (e) :
+           (iPhoneXR_XSM ? (f) : (a)))))))
+}
+
+func XFrom6_FY(x:CGFloat) -> CGFloat{
+    return (screenWidth) / 375.0 * x
+}
+func fontSize_FY(size:CGFloat) -> UIFont{
+    return UIFont.systemFont(ofSize: size)
+}
+
+
+func dPrint(item:@autoclosure () -> Any) {
+    #if DEBUG
+    print(item())
+    #endif
+}
+
+func decodeStringForKey(aDecoder: NSCoder,
+                             key: String) -> String {
     let obj: AnyObject? = aDecoder.decodeObject(forKey: key) as AnyObject?
     if obj != nil {
         if obj is String || obj is NSString {
             return obj as! String
-        }else {
+        } else {
             return ""
         }
-    }else {
+    } else {
         return ""
     }
 }
 
-func decodeBoolForKey(aDecoder: NSCoder, key: String) -> Bool {
+func decodeBoolForKey(aDecoder: NSCoder,
+                           key: String) -> Bool {
     let obj: AnyObject? = aDecoder.decodeObject(forKey: key) as AnyObject?
     if obj != nil {
         if obj is Bool || obj is ObjCBool {
             return obj as! Bool
-        }else {
+        } else {
             return false
         }
-    }else {
+    } else {
         return false
     }
 }
 
-func decodeIntForKey(aDecoder: NSCoder, key: String) -> Int {
+func decodeIntForKey(aDecoder: NSCoder,
+                          key: String) -> Int {
     let obj: AnyObject? = aDecoder.decodeObject(forKey: key) as AnyObject?
     if obj != nil {
         return obj as! Int
-    }else {
+    } else {
         return 0
     }
 }
@@ -154,7 +198,7 @@ func getAutoRect(str: NSString?, font: UIFont, maxWidth: CGFloat, maxHeight: CGF
     
     
     let size = CGSize(width: maxWidth, height: maxHeight)
-    let actualRect: CGRect = text!.boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+    let actualRect: CGRect = text!.boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
     return actualRect
 }
 
@@ -167,7 +211,7 @@ func getAutoRect(str: NSString?, font: UIFont, lineHeight: CGFloat, maxWidth: CG
     paragraphStyle.lineSpacing = lineHeight
     
     let size = CGSize(width:maxWidth, height:maxHeight)
-    let actualRect: CGRect = text!.boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSFontAttributeName: font, NSParagraphStyleAttributeName : paragraphStyle], context: nil)
+    let actualRect: CGRect = text!.boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font, NSAttributedStringKey.paragraphStyle : paragraphStyle], context: nil)
     return actualRect
 }
 
@@ -188,7 +232,7 @@ func createImageView(name: String, frame: CGRect) -> UIImageView {
         if imageWidth > frameWidth {
             y += (frameHeight - imageHeight)/2
             frameHeight = frameWidth*imageHeight/frameHeight
-        }else {
+        } else {
             x += (frameWidth - imageWidth)/2
             frameWidth = frameHeight*imageWidth/frameWidth
         }
@@ -196,7 +240,7 @@ func createImageView(name: String, frame: CGRect) -> UIImageView {
         
         imageView.frame = CGRect(x: x, y: y, width: frameWidth, height: frameHeight)
         return imageView
-    }else {
+    } else {
         let imageView = UIImageView(frame: frame)
         if frameWidth/frameHeight < imageWidth/imageHeight{
             let width = frameWidth*imageHeight/frameHeight
@@ -207,7 +251,7 @@ func createImageView(name: String, frame: CGRect) -> UIImageView {
             
             let rect = CGRect(x: center_x, y: 0, width: width, height: height)
             imageView.image = UIImage(cgImage: image.cgImage!.cropping(to: rect)!)
-        }else {
+        } else {
             let width = imageWidth
             let height = frameHeight*imageWidth/frameWidth
             let center_y = (height - frameHeight)/2
@@ -305,7 +349,7 @@ func validateMobile(mobileNum:String) ->Bool{
         regextestcu.evaluate(with: mobileNum) == true ||
         regextestct.evaluate(with: mobileNum) == true {
         return true
-    }else{
+    } else{
         return false
         
     }
