@@ -2,5 +2,7 @@ platform:ios,'8.0'
 use_frameworks!
 
 target 'SwiftWorks' do
-pod 'ReactiveSwift'
+    pod 'RxSwift',    '~> 4.0'
+    pod 'RxCocoa',    '~> 4.0'
+    pod 'SwifterSwift'
 end

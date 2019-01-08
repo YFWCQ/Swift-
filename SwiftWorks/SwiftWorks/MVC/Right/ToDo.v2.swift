@@ -180,13 +180,13 @@ extension ToDoListViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, view, done in
-            ToDoStore.shared.remove(at: indexPath.row)
-            done(true)
-        }
-        return UISwipeActionsConfiguration(actions: [deleteAction])
-    }
+//    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, view, done in
+//            ToDoStore.shared.remove(at: indexPath.row)
+//            done(true)
+//        }
+//        return UISwipeActionsConfiguration(actions: [deleteAction])
+//    }
 }
 
 let navigationViewController = UINavigationController(rootViewController: ToDoListViewController())

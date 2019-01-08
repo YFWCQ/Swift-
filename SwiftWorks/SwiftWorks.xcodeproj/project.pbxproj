@@ -432,6 +432,13 @@
 			path = Array;
 			sourceTree = "<group>";
 		};
+		5EC1236121AFBC81009D39A3 /* RXSwift */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RXSwift;
+			sourceTree = "<group>";
+		};
 		5ED6AAF91DF8144300F1E032 /* Generics泛型 */ = {
 			isa = PBXGroup;
 			children = (
@@ -976,6 +983,7 @@
 		79EC70621AEF7E72009548C5 /* UITabelView */ = {
 			isa = PBXGroup;
 			children = (
+				5EC1236121AFBC81009D39A3 /* RXSwift */,
 				5E20C0FD1EC9BBD7007FA59A /* Nomal */,
 				5E20C1021EC9BBD7007FA59A /* ReactiveCocoa */,
 			);
@@ -1003,6 +1011,7 @@
 				79EC6ED51AE8CEC9009548C5 /* Frameworks */,
 				79EC6ED61AE8CEC9009548C5 /* Resources */,
 				BDD45EAC89C65A3B8C927E94 /* [CP] Embed Pods Frameworks */,
+				201AD3C016AAC0419506A742 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1096,6 +1105,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		201AD3C016AAC0419506A742 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftWorks/Pods-SwiftWorks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		68D986427978DA84605B056D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1121,13 +1149,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftWorks/Pods-SwiftWorks-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
