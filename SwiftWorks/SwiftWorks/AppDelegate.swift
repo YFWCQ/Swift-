@@ -25,15 +25,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window!.makeKeyAndVisible();
         
-       
+        
+        
+        
+//        print(self.sw_convert("PAYPALISHIRING", 3))
+//        print("--------------------------------------------------------------------------------")
+//        print(self.convert("PAYPALISHIRING", 3))
+
+//        print(self.convert("abc", 3))
+
 //        print(self.convert("abcdefghigklmnopqrst", 3))
 //        print("--------------------------------------------------------------------------------")
 //        print(self.convert("abc", 3))
 //        print("--------------------------------------------------------------------------------")
 //        print(self.convert("abcdefghigkt", 3))
 //        print("--------------------------------------------------------------------------------")
-        print(self.convert("abcdefghigklmnopqrstabcdefghigklmnopqrst", 5))
-        print("--------------------------------------------------------------------------------")
+//        print(self.convert("abcdefghigklmnopqrstabcdefghigklmnopqrst", 5))
+//        print("--------------------------------------------------------------------------------")
 //        print(self.convert("abcdefghigklmnopqrstabcdefghigklmnopqrstabcdefghigklmnopqrstabcdefghigklmnopqrst", 5))
 //        print("--------------------------------------------------------------------------------")
 //        print(self.convert("abcde", 5))
@@ -41,6 +49,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
+    
+//    // leetcode 283. 移动零
+//    func moveZeroes(_ nums: inout [Int]) {
+//
+//        //1.找到第一个为0 的下标d
+//        //2.d往后 不为0 的下标，和 d 替换，d ++
+//        var d = -1;
+//        for i in 0 ..< nums.count {
+//            let tempNum = nums[i]
+//            if tempNum == 0 && d < 0 {
+//                d = i
+//            }
+//            if tempNum != 0 && d >= 0 {
+//                nums[d] = nums[i]
+//                d = d + 1
+//            }
+//        }
+//        if d < 0 {
+//            return
+//        }
+//        for i in d ..< nums.count {
+//            nums[i] = 0
+//        }
+//    }
+    
+    // leetcode 283. 移动零
+    func moveZeroes(_ nums: inout [Int]) {
+        
+        //1.找到第一个为0 的下标d
+        //2.d往后 不为0 的下标，和 d 替换，d ++
+        var tempNums = [Int]()
+        
+        for i in 0 ..< nums.count {
+            if nums[i] != 0 {
+                tempNums.append(nums[i])
+            }
+        }
+        
+        for _ in tempNums.count ..< nums.count {
+            tempNums.append(0)
+        }
+        
+       nums = tempNums
+    }
+
+    
 
     func convert(_ s: String, _ numRows: Int) -> String {
         if s.count <= 1 {
@@ -89,14 +143,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let remainCount = s.count - section
         
         
-//        let tempFromSecondToDownSecondNums = (numRows - 2 ) * section * 2
-//        let tempStartIndex = slitStartIndex
-        
         let middleSecctionLetterNum = section * 2;
-//        let falseMIddleSectionSum = remainCount % middleSecctionLetterNum == 0 ? remainCount / middleSecctionLetterNum :  remainCount / middleSecctionLetterNum + 1;
-        
-        var gap  = 0;
-        
         for i in 0 ... remainCount {
             if i >= s.count {// 超出 跳出循环
                 break
@@ -106,9 +153,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             let numLetter = i + 1
             let sectionMiddleSumNum = (numLetter % middleSecctionLetterNum == 0 ? numLetter / middleSecctionLetterNum : numLetter / middleSecctionLetterNum + 1)
-//            let sectionMiddleNumIndex = (i % middleSecctionLetterNum == 0 ? numLetter / middleSecctionLetterNum : numLetter / middleSecctionLetterNum + 1)
 
-            
             if sectionMiddleSumNum < numRows - 1 {
                 if i % 2 == 0  {
                     // secion 第一个字母
@@ -121,11 +166,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                     tempString.append(startSpaceStr)
 
-                    
-//                    print("startSpaceIndex:" + String(startSpaceIndex) + " " + String(s[startIndex..<endIndex]) + "|" + startSpaceStr + "|")
-
-
-                    
                 } else {
                     // secion 第二个字母
                     var lastSpaceStr = ""
@@ -134,38 +174,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                     tempString.append(String(s[startIndex..<endIndex]))
                     tempString.append(lastSpaceStr)
-                    
-                    
-                    if (i + 1) % middleSecctionLetterNum == 0 {
-                        tempString.append("\n")
-                        
-                        //                        gap = (gap + 1) % 2
-                        
-                    } else {
-                        //                        print("startSpaceIndex:" + String(startSpaceIndex) + " " + String(s[startIndex..<endIndex]) + "|" + startSpaceStr + "|")
-                        
-                    }
-                    print(String(i) + "--" + String(s[startIndex..<endIndex]))
-
-                    
                 }
                 
             } else {
                 
-                if slitEndIndex >= s.count {
-                    break
-                }
                 tempString.append(String(s[startIndex..<endIndex]))
                 tempString.append(spaceFirstLastString)
-                
-                
             }
 
-            
-            
-            
             slitStartIndex = slitStartIndex + 1
             slitEndIndex = slitStartIndex + 1
+            
+            if slitEndIndex > s.count {
+                break
+            }
         }
         
         
@@ -176,6 +198,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print(i)
 //        }
         return tempString
+    }
+    
+    
+    func sw_convert(_ s: String, _ numRows: Int) -> String {
+        if s.count <= 1  { return s }
+        if numRows < 2 { return s }
+        
+        var zRows = [String](repeating: String(), count: min(s.count, numRows)) // 所有行
+        var cursorRow = 0 // 光标的位置索引
+        var nextLine = false // 是否换行
+        
+        for ch in s {
+            zRows[cursorRow] += String(ch) // 光标位置字符
+            if cursorRow == 0 || cursorRow == numRows - 1 { // 当为起始行时, 换行; 当为最后一行时, 不换行
+                nextLine.toggle()
+            }
+            cursorRow += nextLine ? 1 : -1 // 移动光标
+        }
+        return zRows.joined()
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
